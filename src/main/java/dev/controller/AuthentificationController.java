@@ -30,5 +30,5 @@ public class AuthentificationController {
 				.map(CollegueVM::new)
 				.map(col -> ResponseEntity.ok(col))
 				.orElse(ResponseEntity.badRequest().build());
-	}
+	} 
 }
