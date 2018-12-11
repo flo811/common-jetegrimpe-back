@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Configuration de l'identité.
+     * Configuration de  l'identité.
      *
      * @param ds
      * @return
