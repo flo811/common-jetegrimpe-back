@@ -2,6 +2,12 @@ target/
 
 *.jar
 !.mvn/wrapper/maven-wrapper.jar
+clevercloud/
+.mvn/wrapper/
+Jenkinsfile
+mvnw
+mvnw.cmd
+nbactions-dev-mysql.xml
 
 pom.xml
 
