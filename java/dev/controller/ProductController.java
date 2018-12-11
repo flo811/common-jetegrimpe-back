@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.controller.vm.ProductVM;
 import dev.repository.ProductRepo;
 
-@CrossOrigin
-@RestController()
+@RestController
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
