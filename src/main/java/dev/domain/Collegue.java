@@ -9,15 +9,10 @@ public class Collegue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nom;
-
     private String prenom;
-
     private String email;
-
     private String motDePasse;
-
     @OneToMany(mappedBy = "collegue", cascade = CascadeType.PERSIST)
     private List<RoleCollegue> roles;
 
