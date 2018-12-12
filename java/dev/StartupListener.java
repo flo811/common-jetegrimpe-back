@@ -2,7 +2,6 @@ package dev;
 
 import dev.domain.Collegue;
 import dev.domain.Product;
-import dev.domain.ProductType;
 import dev.domain.Role;
 import dev.domain.RoleCollegue;
 import dev.repository.CollegueRepo;

@@ -14,14 +14,14 @@ public class Product {
 	private String photo;
 	private String description;
 	private double price;
-	private ProductType category;
+	private String category;
 	private boolean state;
 	private int quantity;
 	
 	public Product() {
 	}
 
-	public Product(String name, String photo, String description, double price, ProductType category, boolean state, int quantity) {
+	public Product(String name, String photo, String description, double price, String category, boolean state, int quantity) {
 		this.name = name;
 		this.photo = photo;
 		this.description = description;
@@ -71,11 +71,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public ProductType getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(ProductType category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
