@@ -21,28 +21,28 @@ public class ProductService {
 	@PersistenceContext
 	private EntityManager em;
 
-	public List<Product> findByNameCatPriceOrd(String name, String category, double priceMin, double priceMax, boolean isAsc,
-			int pageNbr, int nbrByPage) {
+	public List<Product> findByNameCatPriceOrd(String name, String category, double priceMin, double priceMax, boolean isAsc, int pageNbr, int nbrByPage) {
 		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
 		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
 		Root<Product> productRoot = criteriaQuery.from(Product.class);
 
-		Predicate namePredicate = criteriaBuilder.like(productRoot.get("title"), "%" + name + "%");
+		
+		Predicate namePredicate = criteriaBuilder.like(productRoot.get("name"), "%" + name + "%");
 		Predicate categoryPredicate = criteriaBuilder.equal(productRoot.get("category"), category);
-		Predicate minPredicate = criteriaBuilder.lessThanOrEqualTo(productRoot.get("price"), priceMin);
-		Predicate maxPredicate = criteriaBuilder.greaterThanOrEqualTo(productRoot.get("price"), priceMax);
+		Predicate maxPredicate = criteriaBuilder.lessThanOrEqualTo(productRoot.get("price"), priceMax);
+		Predicate minPredicate = criteriaBuilder.greaterThanOrEqualTo(productRoot.get("price"), priceMin);
 
 		criteriaQuery.where(namePredicate, categoryPredicate, minPredicate, maxPredicate);
-
+		
 		if (isAsc) {
 			criteriaQuery.orderBy(criteriaBuilder.asc(productRoot.get("price")));
 		} else {
 			criteriaQuery.orderBy(criteriaBuilder.desc(productRoot.get("price")));
 		}
 
-		em.createQuery(criteriaQuery).setFirstResult(1 + pageNbr * nbrByPage);
-		em.createQuery(criteriaQuery).setMaxResults(nbrByPage);
-
-		return em.createQuery(criteriaQuery).getResultList();
+		return em.createQuery(criteriaQuery)
+				.setFirstResult((pageNbr - 1) * nbrByPage)
+				.setMaxResults(nbrByPage)
+				.getResultList();
 	}
 }
