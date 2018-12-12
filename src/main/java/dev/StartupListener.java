@@ -56,12 +56,15 @@ public class StartupListener {
         col2.setRoles(Arrays.asList(new RoleCollegue(col2, Role.ROLE_UTILISATEUR)));
         this.collegueRepo.save(col2);
         
-        productRepo.save(new Product("name1", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name2", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name3", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name4", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name5", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name6", "name", "name",1.0, ProductType.Accessoire, true, 2));
-        productRepo.save(new Product("name7", "name", "name",1.0, ProductType.Accessoire, true, 2));*/
+        
+        productRepo.save(new Product("name1", "name", "name",1.0, "baudrier", true, 2));
+        productRepo.save(new Product("name2", "name", "name",1.0, "baudrier", true, 2));
+        productRepo.save(new Product("name3", "name", "name",1.0, "baudrier", true, 2));
+        productRepo.save(new Product("name4", "name", "name",1.0, "accessoire", true, 2));
+        productRepo.save(new Product("name5", "name", "name",1.0, "accessoire", true, 2));
+        productRepo.save(new Product("name6", "name", "name",1.0, "baudrier", true, 2));
+        productRepo.save(new Product("name7", "name", "name",1.0, "accessoire", true, 2));
+        
+        */
     }
 }
