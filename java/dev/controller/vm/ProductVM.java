@@ -1,14 +1,13 @@
 package dev.controller.vm;
 
 import dev.domain.Product;
-import dev.domain.ProductType;
 
 public class ProductVM {
 	private String name;
 	private String photo;
 	private String description;
 	private double price;
-	private ProductType category;
+	private String category;
 	private boolean state;
 	private int quantity;
 
@@ -54,11 +53,11 @@ public class ProductVM {
 		this.price = price;
 	}
 
-	public ProductType getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(ProductType category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
