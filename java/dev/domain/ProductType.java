@@ -1,5 +1,15 @@
 package dev.domain;
 
 public enum ProductType {
-	Chausson, Baudrier, Assurage, Accessoire
+	Chausson("Chausson"), Baudrier("Baudrier"), Assurage("Assurage"), Accessoire("Accessoire");
+
+	private String value;
+
+	private ProductType(String value) {
+		this.value = value;
+	}
+
+	public String getAbreviation() {
+		return value;
+	}
 }
