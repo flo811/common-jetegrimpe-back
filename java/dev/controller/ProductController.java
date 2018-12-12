@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.controller.vm.ProductVM;
+import dev.domain.Product;
 import dev.repository.ProductRepo;
 
-@RestController()
+@RestController
 @RequestMapping("/product")
 public class ProductController {
 	@Autowired
@@ -20,6 +21,11 @@ public class ProductController {
 
 	@GetMapping
 	public List<ProductVM> findSome(@RequestParam String type, @RequestParam int number) {
-		return productRepo.findAll().subList(0, number).stream().map(ProductVM::new).collect(Collectors.toList());
+		
+		 List<Product> subList = productRepo.findAll().subList(0, number);
+		 
+		 List<ProductVM> collect = subList.stream().map(ProductVM::new).collect(Collectors.toList());
+				 
+		 return collect;
 	}
 }
