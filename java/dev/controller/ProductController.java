@@ -23,16 +23,24 @@ public class ProductController {
 	private ProductService productService;
 
 	@GetMapping("/few")
-	public List<ProductVM> findSome(@RequestParam String type, @RequestParam int number) {
-		return productRepo.findAll().subList(0, number).stream().map(ProductVM::new).collect(Collectors.toList());
-	}
-
-	@GetMapping
-	public List<ProductVM> findByCriteria(@RequestParam String name, @RequestParam String category,
-			@RequestParam double priceMin, @RequestParam double priceMax, @RequestParam boolean isAsc,
-			@RequestParam int pageNbr, @RequestParam int nbrByPage) {
-		return productService.findByNameCatPriceOrd(name, category, priceMin, priceMax, isAsc, pageNbr, nbrByPage).stream()
+	public List<ProductVM> findSome(@RequestParam String category, @RequestParam int number) {
+		return productService.findByNameCatPriceOrd("", category, 0, Integer.MAX_VALUE, "asc", 1, Integer.MAX_VALUE).stream()
 				.map(ProductVM::new)
 				.collect(Collectors.toList());
+	}
+
+	@GetMapping("/criteria")
+	public List<ProductVM> findByCriteria(@RequestParam String name, @RequestParam String category,
+			@RequestParam double priceMin, @RequestParam double priceMax, @RequestParam String sort,
+			@RequestParam int pageNbr, @RequestParam int nbrByPage) {
+		return productService.findByNameCatPriceOrd(name, category, priceMin, priceMax, sort, pageNbr, nbrByPage).stream()
+				.map(ProductVM::new)
+				.collect(Collectors.toList());
+	}
+
+	@GetMapping("/count")
+	public long getResultNumberByCriteria(@RequestParam String name, @RequestParam String category,
+			@RequestParam double priceMin, @RequestParam double priceMax) {
+		return productService.findByNameCatPriceOrd(name, category, priceMin, priceMax, "asc", 1, Integer.MAX_VALUE).stream().count();
 	}
 }
