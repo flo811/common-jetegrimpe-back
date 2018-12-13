@@ -1,5 +1,6 @@
 package dev.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ public class Product {
 	@Id
 	@GeneratedValue
 	private long id;
+	@Column(unique=true)
 	private String name;
 	private String photo;
 	private String description;
