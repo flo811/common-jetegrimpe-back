@@ -20,6 +20,9 @@ public class Product {
 	private boolean state;
 	private int quantity;
 	
+	
+	
+	
 	public Product() {
 	}
 
@@ -32,6 +35,7 @@ public class Product {
 		this.state = state;
 		this.quantity = quantity;
 	}
+	
 
 	public long getId() {
 		return id;

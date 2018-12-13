@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,12 +42,14 @@ public class ProductController {
 				.collect(Collectors.toList());
 	}
 	
-	@PostMapping
+	@Secured(value= {"ROLE_ADMINISTRATEUR"})
+	@PostMapping()
 	public ResponseEntity<?> createProduct(@RequestBody Product newProduct){
 		
+		
+		
 		try {
-			
-					
+								
 			return productRepo.findByName(newProduct.getName())
 							.map(prod -> ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
 													   .body("failed : name "+prod.getName()+" already used"))
