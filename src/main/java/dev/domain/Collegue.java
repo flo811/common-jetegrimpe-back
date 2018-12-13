@@ -1,71 +1,128 @@
 package dev.domain;
 
-import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Collegue {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String nom;
+	private String prenom;
+	private String adress;
+	private long phone;
+	private String email;
+	private LocalDate birthDate;
+	private String motDePasse;
+	@OneToMany(mappedBy = "collegue", cascade = CascadeType.PERSIST)
+	private List<RoleCollegue> roles;
 
-    private String nom;
+	public Collegue() {
+	}
 
-    private String prenom;
+	public Collegue(String nom, String prenom, String adress, long phone, String email, LocalDate birthDate,
+			String motDePasse) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adress = adress;
+		this.phone = phone;
+		this.email = email;
+		this.birthDate = birthDate;
+		this.motDePasse = motDePasse;
+	}
 
-    private String email;
+	/**
+	 * @return the adress
+	 */
+	public String getAdress() {
+		return adress;
+	}
 
-    private String motDePasse;
+	/**
+	 * @param adress the adress to set
+	 */
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
 
-    @OneToMany(mappedBy = "collegue", cascade = CascadeType.PERSIST)
-    private List<RoleCollegue> roles;
+	/**
+	 * @return the phone
+	 */
+	public Number getPhone() {
+		return phone;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	/**
+	 * @return the birthDate
+	 */
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	/**
+	 * @param birthDate the birthDate to set
+	 */
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getMotDePasse() {
-        return motDePasse;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public List<RoleCollegue> getRoles() {
-        return roles;
-    }
+	public String getMotDePasse() {
+		return motDePasse;
+	}
 
-    public void setRoles(List<RoleCollegue> roles) {
-        this.roles = roles;
-    }
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
 
-    public String getNom() {
-        return nom;
-    }
+	public List<RoleCollegue> getRoles() {
+		return roles;
+	}
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public void setRoles(List<RoleCollegue> roles) {
+		this.roles = roles;
+	}
 
-    public String getPrenom() {
-        return prenom;
-    }
+	public String getNom() {
+		return nom;
+	}
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
 }
