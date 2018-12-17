@@ -8,6 +8,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dev.controller.vm.ProductVM;
 import dev.domain.Product;
-import dev.domain.Role;
 import dev.repository.ProductRepo;
 import dev.service.ProductService;
 
@@ -30,7 +30,10 @@ public class ProductController {
 
 	@GetMapping("/{name}")
 	public ProductVM findByName(@PathVariable String name) {
-		return new ProductVM(productRepo.findByName(name));
+//		return new ProductVM(productRepo.findByName(name));
+		return productRepo.findByName(name)
+				.map(prod -> new ProductVM(prod))
+				.orElseGet(() -> null); //A modifier en travaillant à partir de response entity pour traiter ce cas.
 	}
 
 	@GetMapping("/few")
@@ -60,12 +63,38 @@ public class ProductController {
 	@PatchMapping("/{name}")
 	public ProductVM patch(@PathVariable String name, @RequestBody Product productNew){
 		
-		Product productOld = productRepo.findByName(name);
-		System.out.println("djehdiede");
-		productNew.setId(productOld.getId());
+		//Méthode avec repo => ProductVM
+//		Product productOld = productRepo.findByName(name);
+//		System.out.println("djehdiede");
+//		productNew.setId(productOld.getId());
+//
+//		productRepo.save(productNew); 
+//		return new ProductVM(productNew);
+		
 
-		productRepo.save(productNew); 
-		return new ProductVM(productNew);
+		//Méthode avec repo => Optional
+		return productRepo.findByName(name)
+				   .map(prod -> {productNew.setId(prod.getId());
+				   				 prod = productNew;
+				   				 productRepo.save(prod);
+				   				 return new ProductVM(prod);})
+								.orElseGet(() -> null); //A modifier en travaillant à partir de response entity pour traiter ce cas.
+		
+		
+	}
+
+
+		
+	@Secured("ROLE_ADMINISTRATEUR")
+	@PostMapping()
+	public String createProduct(@RequestBody Product newProduct){
+						
+			return productRepo.findByName(newProduct.getName())
+							.map(prod -> "{\"message\":\"name "+prod.getName()+" already used\"}")
+							.orElseGet(() -> {productRepo.save(newProduct);
+												return "{\"message\":\"succès\"}";
+											 });
+
 	}
 	
 }
