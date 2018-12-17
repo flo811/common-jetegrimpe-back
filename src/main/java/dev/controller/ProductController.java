@@ -44,23 +44,13 @@ public class ProductController {
 	
 	@Secured(value= {"ROLE_ADMINISTRATEUR"})
 	@PostMapping()
-	public ResponseEntity<?> createProduct(@RequestBody Product newProduct){
-		
-		
-		
-		try {
-								
+	public String createProduct(@RequestBody Product newProduct){
+						
 			return productRepo.findByName(newProduct.getName())
-							.map(prod -> ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
-													   .body("failed : name "+prod.getName()+" already used"))
+							.map(prod -> "{\"message\":\"name "+prod.getName()+" already used\"}")
 							.orElseGet(() -> {productRepo.save(newProduct);
-												return ResponseEntity.status(HttpStatus.OK).build();
+												return "{\"message\":\"succès\"}";
 											 });
-		}catch(Exception ex) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Exception lors du traitement de la requête : "+ex.getMessage());
-		}
-		
-		
 	}
 	
 }
