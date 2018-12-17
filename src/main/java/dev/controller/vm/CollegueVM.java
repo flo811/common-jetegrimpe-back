@@ -13,14 +13,14 @@ import java.util.stream.Collectors;
 public class CollegueVM {
 
     private String email;
-    private String nom;
-    private String prenom;
+    private String name;
+    private String firstName;
     private List<Role> roles = new ArrayList<>();
 
     public CollegueVM(Collegue col) {
         this.email = col.getEmail();
-        this.nom = col.getNom();
-        this.prenom = col.getPrenom();
+        this.name = col.getName();
+        this.firstName = col.getFirstName();
         this.roles = col.getRoles().stream().map(roleCollegue -> roleCollegue.getRole()).collect(Collectors.toList());
     }
 
@@ -32,20 +32,20 @@ public class CollegueVM {
         this.email = email;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public List<Role> getRoles() {

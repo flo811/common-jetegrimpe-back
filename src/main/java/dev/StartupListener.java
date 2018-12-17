@@ -40,20 +40,20 @@ public class StartupListener {
     public void onStart() {
         // Création de deux utilisateurs
 
-    	/*
+ /*   	
     	Collegue col1 = new Collegue();
-        col1.setNom("Admin");
-        col1.setPrenom("DEV");
+        col1.setName("Admin");
+        col1.setFirstName("DEV");
         col1.setEmail("admin@dev.fr");
-        col1.setMotDePasse(passwordEncoder.encode("superpass"));
+        col1.setPassword(passwordEncoder.encode("superpass"));
         col1.setRoles(Arrays.asList(new RoleCollegue(col1, Role.ROLE_ADMINISTRATEUR), new RoleCollegue(col1, Role.ROLE_UTILISATEUR)));
         this.collegueRepo.save(col1);
 
         Collegue col2 = new Collegue();
-        col2.setNom("User");
-        col2.setPrenom("DEV");
+        col2.setName("User");
+        col2.setFirstName("DEV");
         col2.setEmail("user@dev.fr");
-        col2.setMotDePasse(passwordEncoder.encode("superpass"));
+        col2.setPassword(passwordEncoder.encode("superpass"));
         col2.setRoles(Arrays.asList(new RoleCollegue(col2, Role.ROLE_UTILISATEUR)));
         this.collegueRepo.save(col2);
         
@@ -125,8 +125,8 @@ public class StartupListener {
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls17_1_bi-chaussons-solution-femme-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons cliffhanger", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/1/0/10ej_1_0110-chaussons-cliffhanger-millet.jpg", "name",1.0, "Chaussons", true, 2));
-
-        */
+*/
+        
         
     }
 }
