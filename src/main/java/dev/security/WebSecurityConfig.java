@@ -1,4 +1,3 @@
-
 package dev.security;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -45,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
-     * Configuration de  l'identité.
+     * Configuration de l'identité.
      *
      * @param ds
      * @return
@@ -75,8 +74,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> response.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 .and()
                 // toutes les requêtes doivent être authentifiées
-                .authorizeRequests().antMatchers("/product/few").permitAll()
-                .anyRequest().authenticated()
+
+                .authorizeRequests().antMatchers("/product/few\",\"/product/criteria\",\"product/count\",\"product/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				.anyRequest().authenticated()
+
                 .and()
                 // génération d'un formulaire de login
                 // il faut produire une requête avec les caractéristiques suivantes :
@@ -105,4 +106,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies(TOKEN_COOKIE);
     }
 }
-
