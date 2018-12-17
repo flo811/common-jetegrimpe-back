@@ -74,7 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> response.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 .and()
                 // toutes les requêtes doivent être authentifiées
-                .authorizeRequests().antMatchers("/product/few","/product/criteria","product/count").permitAll()
+                .authorizeRequests().antMatchers("/product/few","/product/criteria","product/count","product/**").permitAll()
 				.anyRequest().authenticated()
                 .and()
                 // génération d'un formulaire de login
