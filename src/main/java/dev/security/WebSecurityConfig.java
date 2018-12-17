@@ -75,7 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // toutes les requêtes doivent être authentifiées
 
-                .authorizeRequests().antMatchers("/product/few\",\"/product/criteria\",\"product/count\",\"product/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                .authorizeRequests().antMatchers("/product/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				.anyRequest().authenticated()
 
                 .and()

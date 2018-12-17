@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -85,16 +87,32 @@ public class ProductController {
 
 
 		
+//	@Secured("ROLE_ADMINISTRATEUR")
+//	@PostMapping()
+//	public String createProduct(@RequestBody Product newProduct){
+//						
+//			return productRepo.findByName(newProduct.getName())
+//							.map(prod -> "{\"message\":\"name "+prod.getName()+" already used\"}")
+//							.orElseGet(() -> {productRepo.save(newProduct);
+//												return "{\"message\":\"succès\"}";
+//											 });
+//
+//	}
+	
 	@Secured("ROLE_ADMINISTRATEUR")
 	@PostMapping()
-	public String createProduct(@RequestBody Product newProduct){
-						
+	public ResponseEntity<String> createProduct(@RequestBody Product newProduct){		
+					
+								
 			return productRepo.findByName(newProduct.getName())
-							.map(prod -> "{\"message\":\"name "+prod.getName()+" already used\"}")
-							.orElseGet(() -> {productRepo.save(newProduct);
-												return "{\"message\":\"succès\"}";
-											 });
+							.map(prod -> ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
+													   .body("{\"message\":\"name "+prod.getName()+" already used\"}"))
+ 							.orElseGet(() -> {productRepo.save(newProduct);
+ 												return ResponseEntity.status(HttpStatus.OK)
+ 													   .body("{\"message\":\" "+newProduct.getName()+" ajouté avec succès\"}");
+ 											 });
+			
+	}	
 
-	}
 	
 }
