@@ -30,7 +30,7 @@ public class ProductController {
 	private ProductService productService;
 
 	@GetMapping("/few")
-	public List<ProductVM> findSome(@RequestParam String type, @RequestParam int number) {
+	public List<ProductVM> findSome(@RequestParam String category, @RequestParam int number) {
 		return productRepo.findAll().subList(0, number).stream().map(ProductVM::new).collect(Collectors.toList());
 	}
 

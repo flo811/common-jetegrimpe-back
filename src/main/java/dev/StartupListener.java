@@ -39,8 +39,8 @@ public class StartupListener {
     @EventListener(ContextRefreshedEvent.class)
     public void onStart() {
         // Création de deux utilisateurs
-/* 	
-   	
+ 	
+   	/*
     	Collegue col1 = new Collegue();
         col1.setName("Admin");
         col1.setFirstName("DEV");
@@ -126,7 +126,7 @@ public class StartupListener {
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons cliffhanger", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/1/0/10ej_1_0110-chaussons-cliffhanger-millet.jpg", "name",1.0, "Chaussons", true, 2));
 
-    */    
+       */
         
     }
 }
