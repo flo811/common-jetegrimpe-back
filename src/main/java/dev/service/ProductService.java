@@ -12,10 +12,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import dev.controller.vm.ProductVM;
 import dev.domain.Product;
 
 @Service
@@ -61,6 +58,5 @@ public class ProductService {
 		TypedQuery<Product> products = em.createQuery("SELECT p FROM Product AS p WHERE p.category = :category", Product.class);
 		products.setParameter("category", category);
 		return products.getResultList();
-		
 	}
 }

@@ -104,4 +104,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies(TOKEN_COOKIE);
     }
 }
-
