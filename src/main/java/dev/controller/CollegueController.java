@@ -20,7 +20,7 @@ import dev.repository.CollegueRepo;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/creer-compte")
+@RequestMapping("/utilisateur")
 public class CollegueController {
 
 	@Autowired
@@ -29,18 +29,18 @@ public class CollegueController {
 	
 	
 	// add new person
-	@PostMapping()
+	@PostMapping("/creer-compte")
 	public ResponseEntity<String> addPerson(@RequestBody CollegueVM2 collegue) {
 		List<RoleCollegue> roles = new ArrayList<>();
 		Collegue collegueCreate = new Collegue(collegue.getName(), collegue.getFirstName(), collegue.getAdress(), collegue.getPhone(), collegue.getEmail(), collegue.getBirthDate(), collegue.getPassword());
 		roles.add(new RoleCollegue(collegueCreate, Role.ROLE_UTILISATEUR));
 		collegueCreate.setRoles(roles);
 		
-		if(collegueRepo.findByEmail(collegue.getEmail()) == null) {
+		if(!collegueRepo.findByEmail(collegue.getEmail()).isPresent()) {
 			collegueRepo.save(collegueCreate);
-			return new ResponseEntity<String>("ajout du collègue avec succès", HttpStatus.ACCEPTED);
+			return new ResponseEntity<String>("{\"message\" : \"ajout du collègue avec succès\"}", HttpStatus.ACCEPTED);
 		} else {
-			return new ResponseEntity<String>("Vous disposez déjà d'un compte", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("\"{\"message\" : \"Vous disposez déjà d'un compte\"}", HttpStatus.BAD_REQUEST);
 		}
 	}
 	

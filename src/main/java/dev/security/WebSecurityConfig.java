@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public UserDetailsService userDetailsService(DataSource ds) {
         JdbcUserDetailsManager manager = new JdbcUserDetailsManager();
         manager.setDataSource(ds);
-        manager.setUsersByUsernameQuery("select email, mot_de_passe, 'true' from collegue where email=?");
+        manager.setUsersByUsernameQuery("select email, password, 'true' from collegue where email=?");
         manager.setAuthoritiesByUsernameQuery("select c.email, rc.role from collegue c, role_collegue rc where c.id=rc.collegue_id and c.email=?");
         return manager;
     }
@@ -74,7 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> response.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 .and()
                 // toutes les requêtes doivent être authentifiées
-                .authorizeRequests().antMatchers("/product/**", "/creer-compte").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                .authorizeRequests().antMatchers("/product/**", "/utilisateur/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				.anyRequest().authenticated()
                 .and()
                 // génération d'un formulaire de login
