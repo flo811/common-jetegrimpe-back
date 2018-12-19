@@ -120,9 +120,10 @@ public class StartupListener {
         productRepo.save(new Product("Chaussons ninja", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/a/ba70_1_a-chaussons-ninja-junior-boreal.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons diabolo", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/a/ba74_1_d-chaussons-diabolo-boreal.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons katana", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls05_1_bg-chaussons-katana-femme-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
-        productRepo.save(new Product("Chaussons first garra", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/k/a/ka01_1_e-chaussons-first-garra.jpg", "name",1.0, "Chaussons", true, 2));
+        //productRepo.save(new Product("Chaussons first garra", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/k/a/ka01_1_e-chaussons-first-garra.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls17_1_bi-chaussons-solution-femme-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
-        productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
+        //productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons cliffhanger", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/1/0/10ej_1_0110-chaussons-cliffhanger-millet.jpg", "name",1.0, "Chaussons", true, 2));
+
     */      }
 }
