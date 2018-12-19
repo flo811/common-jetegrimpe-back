@@ -39,7 +39,7 @@ public class ProductController {
 				.collect(Collectors.toList());
 	}
 
-	@GetMapping
+	@GetMapping("/criteria")
 	public List<ProductVM> findByCriteria(@RequestParam String name, @RequestParam String category,
 			@RequestParam double priceMin, @RequestParam double priceMax, @RequestParam String sort,
 			@RequestParam int pageNbr, @RequestParam int nbrByPage) {
