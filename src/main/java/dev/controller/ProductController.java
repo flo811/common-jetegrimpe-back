@@ -49,7 +49,7 @@ public class ProductController {
 				.stream().map(ProductVM::new).collect(Collectors.toList());
 	}
 
-	@GetMapping
+	@GetMapping("/criteria")
 	public List<ProductVM> findByCriteria(@RequestParam String name, @RequestParam String category,
 			@RequestParam double priceMin, @RequestParam double priceMax, @RequestParam String sort,
 			@RequestParam int pageNbr, @RequestParam int nbrByPage) {
@@ -118,6 +118,8 @@ public class ProductController {
 							.body("{\"message\":\" " + newProduct.getName() + " ajouté avec succès\"}");
 				});
 
+		productRepo.save(productNew); 
+		return new ProductVM(productNew);
 	}
 
 	@Secured("ROLE_ADMINISTRATEUR")
@@ -138,5 +140,4 @@ public class ProductController {
 		
 		
 	}
-
 }
