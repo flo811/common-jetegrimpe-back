@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -45,5 +46,17 @@ public class ProductService {
 
 		return em.createQuery(criteriaQuery).setFirstResult((pageNbr - 1) * nbrByPage).setMaxResults(nbrByPage)
 				.getResultList();
+	}
+	
+	
+	
+
+	public List<Product> findByTypeLimited(String category, int number) {
+		
+		//List<ProductVM> listProd = (Math.random() * (listProd.size() - 1));
+		
+		TypedQuery<Product> products = em.createQuery("SELECT p FROM Product AS p WHERE p.category = :category", Product.class);
+		products.setParameter("category", category);
+		return products.getResultList();
 	}
 }

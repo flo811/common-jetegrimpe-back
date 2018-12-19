@@ -1,5 +1,8 @@
 package dev.security;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,9 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
 /**
  * Configuration Spring Security.
@@ -74,7 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> response.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 .and()
                 // toutes les requêtes doivent être authentifiées
-                .authorizeRequests().antMatchers("/product/**").permitAll()
+                .authorizeRequests().antMatchers("/product/few\",\"/product/criteria\",\"product/count\",\"product/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				.anyRequest().authenticated()
                 .and()
                 // génération d'un formulaire de login
