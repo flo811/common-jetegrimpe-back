@@ -92,20 +92,20 @@ public class StartupListener {
         productRepo.save(new Product("Harnais classic", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/5/2/5216_1-harnais-classic-veste-multipoches-kratos-safety.jpg", "name",1.0, "Baudrier", true, 2));
         
         // Product "système d'assurage"
-        productRepo.save(new Product("Système d'aide à l'assurage", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca71_1-systeme-d-aide-a-l-assurage-ohm-edelrid.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Escaper beal", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl68_1-escaper-beal.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Descendeur assureur air force", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl66_1_j-descendeur-assureur-air-force-one-beal.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Descendeur assureur reverso", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/9/0981_1_i-descendeur-assureur-reverso-4-petzl.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Air force", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl65_1-air-force-3---be-safe-screw-beal.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Smart", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/m/a/ma10_1-smart-2-0-dark-orange-mammut.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Unireverso", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/p/v/pv19_1-unireverso-petzl.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Matik camp", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca01_1-matik-camp.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Pack assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al42_1_a-pack-assureur-click-up--climbing-technology.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Pack air force 2", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl71_1-pack-air-force-2---be-safe-vis-beal.jpg", "name",1.0, "Système d'assurage", true, 2));
+        productRepo.save(new Product("Système d'aide à l'assurage", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca71_1-systeme-d-aide-a-l-assurage-ohm-edelrid.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Escaper beal", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl68_1-escaper-beal.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Descendeur assureur air force", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl66_1_j-descendeur-assureur-air-force-one-beal.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Descendeur assureur reverso", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/9/0981_1_i-descendeur-assureur-reverso-4-petzl.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Air force", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl65_1-air-force-3---be-safe-screw-beal.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Smart", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/m/a/ma10_1-smart-2-0-dark-orange-mammut.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Unireverso", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/p/v/pv19_1-unireverso-petzl.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Matik camp", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca01_1-matik-camp.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Pack assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al42_1_a-pack-assureur-click-up--climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Pack air force 2", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl71_1-pack-air-force-2---be-safe-vis-beal.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Grigri", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/p/h/ph02_1_e-grigri---petzl.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Alpine up", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca06_1_c-alpine-up-kit-climbing-technology.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Plaquette gi-gi kong", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/9/0970_1-plaquette-gi-gi-kong.jpg", "name",1.0, "Système d'assurage", true, 2));
-        productRepo.save(new Product("Descendeur assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al10_1_b-descendeur-assureur-be-up-climbing-technology.jpg", "name",1.0, "Système d'assurage", true, 2));
+        productRepo.save(new Product("Alpine up", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca06_1_c-alpine-up-kit-climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Plaquette gi-gi kong", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/9/0970_1-plaquette-gi-gi-kong.jpg", "name",1.0, "Assurage", true, 2));
+        productRepo.save(new Product("Descendeur assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al10_1_b-descendeur-assureur-be-up-climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Assureur descendeur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/6/0692_1-assureur-descendeur-neuf--.jpg", "name",1.0, "Système d'assurage", true, 2));
         
         // Product "chaussons"
@@ -124,5 +124,5 @@ public class StartupListener {
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls17_1_bi-chaussons-solution-femme-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons cliffhanger", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/1/0/10ej_1_0110-chaussons-cliffhanger-millet.jpg", "name",1.0, "Chaussons", true, 2));
-    */      }
+         */ }
 }

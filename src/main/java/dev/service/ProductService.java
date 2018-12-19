@@ -31,7 +31,7 @@ public class ProductService {
 		Predicate maxPredicate = criteriaBuilder.lessThanOrEqualTo(productRoot.get("price"), priceMax);
 		Predicate minPredicate = criteriaBuilder.greaterThanOrEqualTo(productRoot.get("price"), priceMin);
 
-		if (category.equals("tous")) {
+		if (category.equals("Tout")) {
 			criteriaQuery.where(namePredicate, minPredicate, maxPredicate);
 		} else {
 			Predicate categoryPredicate = criteriaBuilder.equal(productRoot.get("category"), category);
