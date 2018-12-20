@@ -1,12 +1,5 @@
 package dev;
 
-import dev.domain.Collegue;
-import dev.domain.Product;
-import dev.domain.Role;
-import dev.domain.RoleCollegue;
-import dev.repository.CollegueRepo;
-import dev.repository.ProductRepo;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -14,7 +7,8 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
+import dev.repository.CollegueRepo;
+import dev.repository.ProductRepo;
 
 /**
  * Code de démarrage de l'application.
@@ -102,11 +96,13 @@ public class StartupListener {
         productRepo.save(new Product("Matik camp", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca01_1-matik-camp.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Pack assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al42_1_a-pack-assureur-click-up--climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Pack air force 2", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/l/bl71_1-pack-air-force-2---be-safe-vis-beal.jpg", "name",1.0, "Assurage", true, 2));
+
         productRepo.save(new Product("Grigri", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/p/h/ph02_1_e-grigri---petzl.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Alpine up", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/c/a/ca06_1_c-alpine-up-kit-climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Plaquette gi-gi kong", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/9/0970_1-plaquette-gi-gi-kong.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Descendeur assureur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/a/l/al10_1_b-descendeur-assureur-be-up-climbing-technology.jpg", "name",1.0, "Assurage", true, 2));
         productRepo.save(new Product("Assureur descendeur", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/0/6/0692_1-assureur-descendeur-neuf--.jpg", "name",1.0, "Assurage", true, 2));
+
         
         // Product "chaussons"
         productRepo.save(new Product("Chaussons apache", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/b/n/bn01_1_b-chaussons-apache-light-andrea-boldrini.jpg", "name",1.0, "Chaussons", true, 2));
@@ -124,7 +120,9 @@ public class StartupListener {
         productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls17_1_bi-chaussons-solution-femme-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         //productRepo.save(new Product("Chaussons solution", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/l/s/ls02_1_bf-chaussons-solution-la-sportiva.jpg", "name",1.0, "Chaussons", true, 2));
         productRepo.save(new Product("Chaussons cliffhanger", "https://www.expe.fr/media/catalog/product/cache/1/small_image/190x/9df78eab33525d08d6e5fb8d27136e95/1/0/10ej_1_0110-chaussons-cliffhanger-millet.jpg", "name",1.0, "Chaussons", true, 2));
+<<<<<<< HEAD
 */
 
           }
+
 }
