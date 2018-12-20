@@ -60,10 +60,9 @@ public class ProductController {
 	public ProductVM patch(@PathVariable String name, @RequestBody Product productNew){
 		
 		Product productOld = productRepo.findByName(name);
-		System.out.println("djehdiede");
 		productNew.setId(productOld.getId());
-
 		productRepo.save(productNew); 
+		
 		return new ProductVM(productNew);
 	}
 }
