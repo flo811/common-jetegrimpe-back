@@ -26,12 +26,12 @@ public class ProductService {
 		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
 		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
 		Root<Product> productRoot = criteriaQuery.from(Product.class);
-
+		
 		Predicate namePredicate = criteriaBuilder.like(productRoot.get("name"), "%" + name + "%");
 		Predicate maxPredicate = criteriaBuilder.lessThanOrEqualTo(productRoot.get("price"), priceMax);
 		Predicate minPredicate = criteriaBuilder.greaterThanOrEqualTo(productRoot.get("price"), priceMin);
 
-		if (category.equals("tous")) {
+		if (category.equals("Tout")) {
 			criteriaQuery.where(namePredicate, minPredicate, maxPredicate);
 		} else {
 			Predicate categoryPredicate = criteriaBuilder.equal(productRoot.get("category"), category);
