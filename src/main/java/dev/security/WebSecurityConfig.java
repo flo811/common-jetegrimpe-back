@@ -1,8 +1,5 @@
 package dev.security;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 /**
  * Configuration Spring Security.
@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public UserDetailsService userDetailsService(DataSource ds) {
         JdbcUserDetailsManager manager = new JdbcUserDetailsManager();
         manager.setDataSource(ds);
-        manager.setUsersByUsernameQuery("select email, mot_de_passe, 'true' from collegue where email=?");
+        manager.setUsersByUsernameQuery("select email, password, 'true' from collegue where email=?");
         manager.setAuthoritiesByUsernameQuery("select c.email, rc.role from collegue c, role_collegue rc where c.id=rc.collegue_id and c.email=?");
         return manager;
     }
@@ -74,7 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint((request, response, authException) -> response.setStatus(HttpServletResponse.SC_FORBIDDEN))
                 .and()
                 // toutes les requêtes doivent être authentifiées
-                .authorizeRequests().antMatchers("/product/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                .authorizeRequests().antMatchers("/product/**", "/utilisateur/**").permitAll()//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				.anyRequest().authenticated()
                 .and()
                 // génération d'un formulaire de login
