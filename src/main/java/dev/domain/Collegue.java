@@ -25,6 +25,7 @@ public class Collegue {
 	private String password;
 	@OneToMany(mappedBy = "collegue", cascade = CascadeType.PERSIST)
 	private List<RoleCollegue> roles;
+	
 
 	public Collegue() {
 	}
@@ -84,6 +85,10 @@ public class Collegue {
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getEmail() {

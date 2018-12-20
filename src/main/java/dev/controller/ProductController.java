@@ -70,14 +70,6 @@ public class ProductController {
 	@PatchMapping("/{name}")
 	public ProductVM patch(@PathVariable String name, @RequestBody Product productNew) {
 
-		// Méthode avec repo => ProductVM
-//		Product productOld = productRepo.findByName(name);
-//		System.out.println("djehdiede");
-//		productNew.setId(productOld.getId());
-//
-//		productRepo.save(productNew); 
-//		return new ProductVM(productNew);
-
 		// Méthode avec repo => Optional
 		return productRepo.findByName(name).map(prod -> {
 			productNew.setId(prod.getId());
